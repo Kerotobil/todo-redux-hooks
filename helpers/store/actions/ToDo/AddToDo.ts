@@ -1,8 +1,8 @@
-import { ToDo } from "../../types/toDo";
+import { AddTodo } from "../../types/toDo";
 type Props = {
-  item: ToDo;
+  item: AddTodo;
 };
 
 export const addToDo = (props: Props) => {
-  return { type: "TODO_ADD", payload: props.item };
+  return { type: props.item.type, payload: props.item.payload };
 };

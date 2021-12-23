@@ -11,21 +11,26 @@ const todoReducer = (
   switch (action.type) {
     case "TODO_ADD": {
       const itemIndex = state.item.findIndex(
-        (item) => action.payload.toDoText == item.toDoText
+        (item) => action.payload.text == item.toDoText
       );
+
+      console.log(action.payload.text);
 
       if (itemIndex !== -1) {
         const qty = state.item[itemIndex].howMany;
         state.item[itemIndex].howMany = action.payload.howMany + qty;
         return { ...state };
       } else {
-        state.item.push(action.payload);
+        state.item.push({
+          toDoText: action.payload.text,
+          howMany: action.payload.howMany,
+        });
         return { ...state };
       }
     }
     case "TODO_ISOK": {
       const itemIndex = state.item.findIndex(
-        (item) => item.toDoText == action.payload.toDoText
+        (item) => item.toDoText == action.payload.text
       );
       state.item[itemIndex].isOk = action.payload.isOk;
       return { ...state };

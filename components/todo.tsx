@@ -28,7 +28,14 @@ export const ToDoList = () => {
           toDoText: yup.string().required(" "),
         })}
         onSubmit={(values, { resetForm }) => {
-          dispatch(addToDo({ item: { ...values, isOk: false } }));
+          dispatch(
+            addToDo({
+              item: {
+                type: "TODO_ADD",
+                payload: { text: values.toDoText, howMany: values.howMany },
+              },
+            })
+          );
           resetForm();
         }}
       >

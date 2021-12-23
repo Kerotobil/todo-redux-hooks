@@ -1,7 +1,6 @@
 import { MinusIcon, PlusIcon, CheckIcon } from "@heroicons/react/solid";
 import { useDispatch, useSelector } from "react-redux";
 import { AppState } from "../helpers/store";
-import { addToDo } from "../helpers/store/actions/ToDo/AddToDo";
 import { toggleOk } from "../helpers/store/actions/ToDo/toggleOk";
 type Props = {
   index: number;

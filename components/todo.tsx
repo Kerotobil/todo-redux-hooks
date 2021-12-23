@@ -12,6 +12,7 @@ export const ToDoList = () => {
   const [datum, setDatum] = useState<ToDo>({
     howMany: 1,
     toDoText: "",
+    isOk: false,
   });
   const dispatch = useDispatch();
   useEffect(() => {
@@ -23,7 +24,7 @@ export const ToDoList = () => {
       <Formik
         initialValues={{ ...datum }}
         onSubmit={(values, { resetForm }) => {
-          dispatch(addToDo({ item: { ...values } }));
+          dispatch(addToDo({ item: { ...values, isOk: false } }));
           resetForm();
         }}
       >

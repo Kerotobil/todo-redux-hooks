@@ -23,7 +23,12 @@ const todoReducer = (
         return { ...state };
       }
     }
-    case "TODO-REMOVE": {
+    case "TODO_ISOK": {
+      const itemIndex = state.item.findIndex(
+        (item) => item.toDoText == action.payload.toDoText
+      );
+      state.item[itemIndex].isOk = action.payload.isOk;
+      return { ...state };
     }
     default:
       return state;

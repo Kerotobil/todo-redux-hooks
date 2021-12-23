@@ -1,4 +1,4 @@
-import { Field } from "formik";
+import { Field, useField } from "formik";
 import React from "react";
 import { MinusIcon, PlusIcon } from "@heroicons/react/solid";
 
@@ -17,6 +17,8 @@ type Props = React.InputHTMLAttributes<HTMLInputElement> & {
 };
 
 export const TextField = (props: Props) => {
+  const [field, meta, helpers] = useField(props.name);
+
   return (
     <div>
       <div className="flex space-x-2">
@@ -26,7 +28,9 @@ export const TextField = (props: Props) => {
           </label>
           <Field
             name={props.name}
-            className="block py-2 px-4 w-full rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className={`block border border-transparent py-2 px-4 w-full rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm ${
+              meta.error ? "border-2 border-red-800" : ""
+            }`}
           />
         </div>
         <div>

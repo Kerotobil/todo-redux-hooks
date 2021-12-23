@@ -1,10 +1,11 @@
-import { Formik, Form } from "formik";
+import { Formik, Form, yupToFormErrors } from "formik";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppState } from "../helpers/store";
 import { addToDo } from "../helpers/store/actions/ToDo/AddToDo";
 import { ToDo } from "../helpers/store/types/toDo";
 import { TextField } from "./Formik/textField";
+import * as yup from "yup";
 
 export const ToDoList = () => {
   const selector = useSelector((state: AppState) => state.todo);
@@ -22,7 +23,10 @@ export const ToDoList = () => {
   return (
     <div className="">
       <Formik
-        initialValues={{ ...datum }}
+        initialValues={datum}
+        validationSchema={yup.object().shape({
+          toDoText: yup.string().required(" "),
+        })}
         onSubmit={(values, { resetForm }) => {
           dispatch(addToDo({ item: { ...values, isOk: false } }));
           resetForm();

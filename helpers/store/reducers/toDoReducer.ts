@@ -13,9 +13,6 @@ const todoReducer = (
       const itemIndex = state.item.findIndex(
         (item) => action.payload.text == item.toDoText
       );
-
-      console.log(action.payload.text);
-
       if (itemIndex !== -1) {
         const qty = state.item[itemIndex].howMany;
         state.item[itemIndex].howMany = action.payload.howMany + qty;

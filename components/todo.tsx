@@ -16,9 +16,6 @@ export const ToDoList = () => {
     isOk: false,
   });
   const dispatch = useDispatch();
-  useEffect(() => {
-    console.log(selector);
-  }, [selector]);
 
   return (
     <div className="">

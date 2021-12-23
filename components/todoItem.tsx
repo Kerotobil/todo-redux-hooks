@@ -27,7 +27,12 @@ export const TodoItem = (props: Props) => {
         className="cursor-pointer"
         onClick={() =>
           dispatch(
-            toggleOk({ item: { isOk: !ListItem.isOk, toDoText: props.text } })
+            toggleOk({
+              item: {
+                type: "TODO_ISOK",
+                payload: { text: props.text, isOk: !ListItem.isOk },
+              },
+            })
           )
         }
       >

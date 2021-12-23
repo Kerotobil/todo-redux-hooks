@@ -26,6 +26,7 @@ const todoReducer = (
       }
     }
     case "TODO_ISOK": {
+      console.log(action.payload);
       const itemIndex = state.item.findIndex(
         (item) => item.toDoText == action.payload.text
       );

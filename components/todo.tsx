@@ -8,12 +8,9 @@ import { TextField } from "./Formik/textField";
 import * as yup from "yup";
 
 export const ToDoList = () => {
-  const selector = useSelector((state: AppState) => state.todo);
-
   const [datum, setDatum] = useState<ToDo>({
     howMany: 1,
     toDoText: "",
-    isOk: false,
   });
   const dispatch = useDispatch();
 

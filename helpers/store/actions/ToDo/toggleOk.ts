@@ -1,8 +1,8 @@
-import { ToDo } from "../../types/toDo";
+import { TodoOk } from "../../types/toDo";
 type Props = {
-  item: ToDo;
+  item: TodoOk;
 };
 
 export const toggleOk = (props: Props) => {
-  return { type: "TODO_ISOK", payload: props.item };
+  return { type: props.item.type, payload: props.item.payload };
 };

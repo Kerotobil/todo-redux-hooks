@@ -3,8 +3,9 @@ import { ThunkDispatch } from "redux-thunk";
 export type ToDo = {
   id?: string;
   toDoText: string;
-  howMany: number;
+  howMany?: number;
   hour?: Date;
+  isOk: boolean;
 };
 
 export interface ToDoState {
@@ -12,7 +13,7 @@ export interface ToDoState {
 }
 
 export interface ToDoActions {
-  type: "TODO_ADD" | "TODO-REMOVE";
+  type: "TODO_ADD" | "TODO_ISOK";
   payload: ToDo;
 }
 

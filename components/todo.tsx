@@ -65,7 +65,7 @@ export const ToDoList = () => {
               <div className="col-start-5 col-span-4 px-8 rounded-md">
                 <button
                   type="submit"
-                  className="w-full px-4 py-2  text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  className="w-full px-4 py-2 min-w-min  text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
                   {`Ekle`}
                 </button>

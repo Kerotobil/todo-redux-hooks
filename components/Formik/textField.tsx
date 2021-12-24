@@ -40,9 +40,9 @@ export const TextField = (props: Props) => {
           <div className="flex flex-row h-6 w-full rounded-lg relative bg-transparent mt-1">
             <div
               onClick={() => props.onClick(EventName.DEC)}
-              className="bg-gray-100 text-gray-600 hover:text-gray-200 hover:bg-gray-400 rounded cursor-pointer outline-none"
+              className="bg-gray-100 w-6 h-6 text-gray-600 hover:text-gray-200 hover:bg-gray-400 rounded cursor-pointer outline-none"
             >
-              <MinusIcon className="w-5 h-5 mx-auto" />
+              <MinusIcon className="w-full h-full py-0 mx-auto" />
             </div>
             <input
               type="number"
@@ -50,14 +50,14 @@ export const TextField = (props: Props) => {
               name={props.quantityName}
               value={props.howMany}
               onChange={() => null}
-              readOnly
+              readOnly={true}
               disabled
             />
             <div
               onClick={() => props.onClick(EventName.INC)}
-              className="bg-gray-100 text-gray-600 hover:text-gray-200 hover:bg-gray-400 rounded cursor-pointer"
+              className="bg-gray-100 w-6 h-6 text-gray-600 hover:text-gray-200 hover:bg-gray-400 rounded cursor-pointer"
             >
-              <PlusIcon className="w-5 h-5 mx-auto" />
+              <PlusIcon className="w-full h-full mx-auto text-center align-middle" />
             </div>
           </div>
         </div>

@@ -22,7 +22,7 @@ export const HomeLayout = (props) => {
   }, [selector]);
 
   return (
-    <div className="bg-red-200 pt-4  mx-auto h-screen">
+    <div className="bg-red-200 pt-4  mx-auto max-h-screen h-screen">
       <div className="relative max-w-4xl mx-auto">
         <Link href="/">
           <a>

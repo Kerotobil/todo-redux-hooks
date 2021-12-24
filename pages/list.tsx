@@ -8,8 +8,8 @@ export default function List() {
 
   return (
     <Layout variant="home">
-      <div className="w-full h-screen">
-        <div className="my-48 min-h-min h-8 py-24 ">
+      <div className="w-full">
+        <div className="my-48 min-h-min h-8 py-2 mx-8">
           <div className="space-y-2">
             <div className="rounded text-gray-800 max-w-md mx-auto flex justify-between px-4 w-full">
               <div>{"Sırada Ne var "}</div>
